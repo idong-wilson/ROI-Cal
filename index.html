@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="max-w-xl my-24 mx-auto bg-gray-400 shadow-2xl rounded-lg">
+    <div class="bg-[#14213d] text-white p-12 rounded-t-lg">
+      <h3 class="mt-0 mb-8 text-2xl font-bold">ROI Calculator</h3>
+
+      <form class="flex gap-2 justify-between">
+        <div class="group">
+          <div class="mb-2">Investment Amount</div>
+          <input onchange="updateChart()" type="number" value="9000" id="invest" class="text-black px-2 w-[100%]">
+        </div>
+
+        <div class="group">
+          <div class="profit-amount mb-2">Profit Amount</div>
+          <input onchange="updateChart()" type="number" value="1000" id="gain" class="returns text-black px-2 w-[100%]">
+        </div>
+
+        <div class="group">
+          <div class="tenure-amount mb-2">Tenure (in years)</div>
+          <input onchange="updateChart()" type="number" value="2.5" step="0.1" id="duration" class="duration text-black px-2 w-[100%]">
+        </div>
+
+        
+      </form>
+    </div>
+
+
+    <div class="flex justify-between items-center">
+      <div class="w-[100%] py-2 px-8">
+        <div class="loan-emi">
+          <h3 class="text-base mb-2 font-medium">Investment Amount</h3>
+          <div id="investment" class="value relative before:content-['$'] before:text-xl before:font-normal before:mr-2 before:opacity-40 text-3xl font-bold pb-2.5 border-b">9000</div>
+        </div>
+
+        <div class="total-interest text-base mb-2 font-medium">
+          <h3>Profit Amount</h3>
+          <div id="profit" class="value relative before:content-['$'] before:text-xl before:font-normal before:mr-2 before:opacity-40 text-3xl font-bold pb-2.5 border-b">1000</div>
+        </div>
+
+        <div class="total-interest text-base mb-2 font-medium">
+          <h3>Tenure (in years)</h3>
+          <div id="tenure" class="trnure value relative after:content-['yrs'] after:text-xl before:font-normal before:mr-2 before:opacity-40 text-3xl font-bold pb-2.5 border-b" step="0.1">2.5</div>
+        </div>
+
+        <div class="total-interest text-base mb-2 font-medium">
+          <h3>Return On Investment (ROI)</h3>
+          <div id="returns" class="value relative after:content-['%'] after:text-xl before:font-normal before:mr-2 before:opacity-40 text-3xl font-bold pb-2.5 border-b">11.11</div>
+        </div>
+
+        <div class="total-amount text-base mb-2 font-medium">
+          <h3>Annualized Return (AR)</h3>
+          <div id="annualized" class="value relative after:content-['%'] after:text-xl before:font-normal before:mr-2 before:opacity-40 text-3xl font-bold pb-2.5 border-b">4.3</div>
+        </div>
+
+        <button class="cal-btn bg-orange-600 mt-6 mb-8 mx-0 pointer border-none rounded-full py-2 px-6 text-white text-xl font-bold">Calculate</button>
+      </div>
+
+
+      <div class="right w-[50%]">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="index.js"></script>
+</body>
+</html>
