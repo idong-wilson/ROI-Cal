@@ -6,7 +6,7 @@ const duration = document.getElementById('duration');
 const data = {
   labels: ['Investment', 'Profit'],
   datasets: [{
-    label: 'ROI Calculator',
+    label: 'Investment Overview',
     data: [invest.value, gain.value],
     backgroundColor: [
       'rgba(166, 75, 28, 1.0)',
